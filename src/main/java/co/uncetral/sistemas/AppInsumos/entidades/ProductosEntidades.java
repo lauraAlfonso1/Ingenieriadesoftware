@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name = "Producto")
 @Table(name= "Productos")
 public class ProductosEntidades {
     @Id
@@ -29,6 +29,7 @@ public class ProductosEntidades {
 
     @Column(name = "PROD_CANTIDAD")
     private int cantidad;
+
 
 
 
