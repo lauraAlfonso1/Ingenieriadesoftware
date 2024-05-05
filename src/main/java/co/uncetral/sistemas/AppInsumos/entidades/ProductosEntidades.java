@@ -10,9 +10,10 @@ import java.io.Serializable;
 
 public class ProductosEntidades implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CODIGO_REL")
+    @SequenceGenerator(name = "SEQ_CODIGO_REL",sequenceName = "SEQ_CODIGO_REL",allocationSize = 1)
     @Column(name = "PROD_CODIGO", nullable = false)
-    private int codigo;
+    private Long codigo;
 
     @Column(name = "PROD_MARCA", nullable = false)
     private String nombre;
