@@ -13,7 +13,7 @@ public class ProductosEntidades implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CODIGO_REL")
     @SequenceGenerator(name = "SEQ_CODIGO_REL",sequenceName = "SEQ_CODIGO_REL",allocationSize = 1)
     @Column(name = "PROD_CODIGO", nullable = false)
-    private Long codigo;
+    private long codigo;
 
     @Column(name = "PROD_MARCA", nullable = false)
     private String nombre;
