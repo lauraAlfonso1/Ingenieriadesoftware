@@ -40,12 +40,12 @@
             <td th:text="${productos.modelo}">modelo</td>
             <td th:text="${productos.descripcion}">descripcion</td>
             <td>
-                <select class="form-select form-select-sm" name="cantidad" th:field="*{producto.cantidad}">
+                <select class="form-select form-select-sm" name="cantidad" th:field="*{productos.cantidad}">
                     <!-- Itera sobre las opciones para la cantidad -->
-                    <option th:each="i : ${#numbers.sequence(1, producto.cantidad)}"
+                    <option th:each="i : ${#numbers.sequence(1, productos.cantidad)}"
                             th:value="${i}"
                             th:text="${i}"
-                            th:selected="${i == producto.cantidad}">Cantidad</option>
+                            th:selected="${i == productos.cantidad}">Cantidad</option>
                 </select>
             </td>
             <td th:text="${productos.precio}">precio</td>
