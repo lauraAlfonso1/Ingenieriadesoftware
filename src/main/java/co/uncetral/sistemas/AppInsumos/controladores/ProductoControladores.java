@@ -18,7 +18,10 @@ public class ProductoControladores {
 
 
     @GetMapping("/productos/ventas")
-
+    public String ventas(Model modelo) {
+        modelo.addAttribute("producto",productoOperaciones.consultar());
+        return "lista_productos";
+    }
 
 
     @GetMapping("/productos/nuevo")
