@@ -17,6 +17,10 @@ public class ProductoControladores {
     ProductoOperaciones productoOperaciones;
 
 
+    @GetMapping("/productos/ventas")
+
+
+
     @GetMapping("/productos/nuevo")
     public String guardarProducto(Model modelo){
         ProductosEntidades producto = new ProductosEntidades();

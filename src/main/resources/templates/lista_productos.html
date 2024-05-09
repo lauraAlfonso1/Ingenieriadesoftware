@@ -30,6 +30,7 @@
                 <th>Modelo</th>
                 <th>Descripcion</th>
                 <th>Cantidad</th>
+                <th>Precio Unitario</th>
             </tr>
             </thead>
             <tbody>
@@ -39,14 +40,16 @@
                 <td th:text="${productos.modelo}">modelo</td>
                 <td th:text="${productos.descripcion}">descripcion</td>
                 <td th:text="${productos.cantidad}">cantidad</td>
+                <td th:text="${productos.precio}">precio</td>
                 <td>
 
                 </td>
             </tr>
             </tbody>
             <a th:href="@{/productos/nuevo}" class="btn btn-info">Añadir Producto</a>
-        </table>
 
+        </table>
+        <a class="btn btn-info">Venta de Producto</a>
     </div>
 </body>
 </html>
