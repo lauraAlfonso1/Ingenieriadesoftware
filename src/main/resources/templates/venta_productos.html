@@ -34,21 +34,21 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="productos :${productos}">
-            <td th:text="${productos.codigo}">codigo</td>
-            <td th:text="${productos.nombre}">Nombre</td>
-            <td th:text="${productos.modelo}">modelo</td>
-            <td th:text="${productos.descripcion}">descripcion</td>
+        <tr th:each="producto :${productos}">
+            <td th:text="${producto.codigo}">codigo</td>
+            <td th:text="${producto.nombre}">Nombre</td>
+            <td th:text="${producto.modelo}">modelo</td>
+            <td th:text="${producto.descripcion}">descripcion</td>
             <td>
-                <select class="form-select form-select-sm" name="cantidad" th:field="*{productos.cantidad}">
+                <select class="form-select form-select-sm" name="cantidad" >
                     <!-- Itera sobre las opciones para la cantidad -->
-                    <option th:each="i : ${#numbers.sequence(1, productos.cantidad)}"
+                    <option th:each="i : ${#numbers.sequence(1, producto.cantidad)}"
                             th:value="${i}"
                             th:text="${i}"
-                            th:selected="${i == productos.cantidad}">Cantidad</option>
+                            th:selected="${i == producto.cantidad}">Cantidad</option>
                 </select>
             </td>
-            <td th:text="${productos.precio}">precio</td>
+            <td th:text="${producto.precio}">precio</td>
             <td>
 
             </td>

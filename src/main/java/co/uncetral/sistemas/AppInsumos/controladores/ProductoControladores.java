@@ -19,9 +19,7 @@ public class ProductoControladores {
 
     @GetMapping("/productos/ventas")
     public String ventas(Model modelo) {
-        modelo.addAttribute("producto",productoOperaciones.consultar());
-        for( ProductosEntidades producto : productoOperaciones.consultar())
-        System.out.println(producto);
+        modelo.addAttribute("productos",productoOperaciones.consultar());
         return "venta_productos";
     }
 
