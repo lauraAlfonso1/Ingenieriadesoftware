@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Proveedores</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f4f4f4; /* Color de fondo */
+            font-family: 'Arial', sans-serif; /* Fuente */
+            color: #333; /* Color del texto */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .jumbotron {
+            background-color: #007bff; /* Color del encabezado */
+            color: #fff; /* Color del texto del encabezado */
+            padding: 80px 20px;
+            border-radius: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .table {
+            background-color: #fff; /* Fondo de la tabla */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        .table th, .table td {
+            border: none; /* Sin bordes entre celdas */
+        }
+
+        .btn-info {
+            background-color: #007bff; /* Color del botón */
+            border-color: #007bff; /* Color del borde del botón */
+            margin-top: 20px; /* Espacio entre la tabla y el botón */
+        }
+    </style>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Lista de Proveedores</h1>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>NIT</th>
+            <th>Nombre</th>
+            <th>Contacto</th>
+            <th>Dirección</th>
+            <th>Productos Suministrados</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Proveedor :${Proveedores}">
+            <td th:text="${Proveedor.NIT}">NIT</td>
+            <td th:text="${Proveedor.Nombre}">Nombre</td>
+            <td th:text="${Proveedor.Contacto}">Contacto</td>
+            <td th:text="${Proveedor.Direccion}">Dirección</td>
+            <td th:text="${Proveedor.ProductosSuministrados}">Productos Suministrados</td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/Proveedores/nuevoPro}" class="btn btn-info btn-lg btn-block">Añadir Proveedor</a>
+</div>
+</body>
+</html>
