@@ -74,13 +74,9 @@
             <td th:text="${producto.modelo}">modelo</td>
             <td th:text="${producto.descripcion}">descripcion</td>
             <td>
-                <select class="form-select form-select-sm" name="cantidad" >
-                    <!-- Itera sobre las opciones para la cantidad -->
-                    <option th:each="i : ${#numbers.sequence(1, producto.cantidad)}"
-                            th:value="${i}"
-                            th:text="${i}"
-                            th:selected="${i == producto.cantidad}">Cantidad</option>
-                </select>
+                <div class="form-group">
+                    <input type="int" name="cantidad" th:field="*{producto.cantidad}" class="form-control" placeholder="Digite la cantidades que requiera: " required>
+                </div>
             </td>
             <td th:text="${producto.precio}">precio</td>
             <td>
