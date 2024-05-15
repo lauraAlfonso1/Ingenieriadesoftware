@@ -22,6 +22,7 @@ public class ProductoControladores {
         modelo.addAttribute("productos",productoOperaciones.consultar());
         return "venta_productos";
     }
+    //Crear el post mapping en donde cuando se de click a vender restar las cantidades seleccionadas con el total
 
 
     @GetMapping("/productos/nuevo")
