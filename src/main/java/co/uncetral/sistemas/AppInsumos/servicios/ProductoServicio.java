@@ -25,9 +25,13 @@ public class ProductoServicio implements ProductoOperaciones {
     }
 
     @Override
-    public ProductosEntidades restar(int cantidades) {
-        //@Query
+    public void actualizarInventario(ProductosEntidades producto) {
+        repositorioProductos.save(producto);
 
-        return null;
     }
+
+
+
+
+
 }
