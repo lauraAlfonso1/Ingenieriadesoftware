@@ -5,6 +5,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity(name = "Producto")
 @Table(name= "Productos")
 
