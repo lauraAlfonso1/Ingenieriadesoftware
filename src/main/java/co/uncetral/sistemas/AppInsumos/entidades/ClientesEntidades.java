@@ -12,10 +12,8 @@ import lombok.*;
 
 public class ClientesEntidades {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CLIENTES_REL")
-    @SequenceGenerator(name = "SEQ_CLIENTES_REL", sequenceName = "SEQ_CLIENTE_REL",allocationSize = 1)
-    @Column(name = "Clien_NIT", nullable = false)
-    private int nit;
+    @Column(name = "Clien_ID", nullable = false)
+    private int id;
 
     @Column(name = "Clien_Nombre", nullable = false)
     private String nombre;
