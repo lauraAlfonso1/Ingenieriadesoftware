@@ -29,5 +29,6 @@ public class ClienteControladores {
     public String listarProductos(Model modelo) {
         modelo.addAttribute("clientes", clienteOperaciones.consultar());
         return "lista_clientes";
+
     }
 }
