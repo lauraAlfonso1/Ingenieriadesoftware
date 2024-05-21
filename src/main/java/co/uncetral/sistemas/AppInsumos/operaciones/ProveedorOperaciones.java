@@ -8,4 +8,5 @@ public interface ProveedorOperaciones {
 
     public ProovedoresEntidades crearpro (ProovedoresEntidades proveedor);
     public List<ProovedoresEntidades> consultarpro();
+
 }
