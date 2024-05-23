@@ -14,8 +14,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "Proveedores")
 public class ProovedoresEntidades {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_PROOVEDORE")
-    @SequenceGenerator(name = "SEQ_PROOVEDORES_REL",sequenceName = "SEQ_PROOVEDORESRES_REL", allocationSize = 1)
     @Column(name = "Prov_NIT", nullable = false)
     private int NIT;
 

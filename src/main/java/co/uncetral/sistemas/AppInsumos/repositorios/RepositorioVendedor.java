@@ -1,5 +1,7 @@
 package co.uncetral.sistemas.AppInsumos.repositorios;
-import org.springframework.data.repository.CrudRepository;
-public interface RepositorioVendedor {
+import co.uncetral.sistemas.AppInsumos.entidades.VendedoresEntidades;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RepositorioVendedor extends JpaRepository<VendedoresEntidades, Long> {
 
 }
