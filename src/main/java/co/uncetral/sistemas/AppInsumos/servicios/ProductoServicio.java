@@ -4,6 +4,7 @@ import co.uncetral.sistemas.AppInsumos.entidades.ProductosEntidades;
 import co.uncetral.sistemas.AppInsumos.operaciones.ProductoOperaciones;
 import co.uncetral.sistemas.AppInsumos.repositorios.RepositorioProductos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,4 +23,15 @@ public class ProductoServicio implements ProductoOperaciones {
     public List<ProductosEntidades> consultar() {
         return repositorioProductos.findAll();
     }
+
+    @Override
+    public void actualizarInventario(ProductosEntidades producto) {
+        repositorioProductos.save(producto);
+
+    }
+
+
+
+
+
 }
