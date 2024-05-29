@@ -17,6 +17,20 @@ public class ProductoControladores {
     ProductoOperaciones productoOperaciones;
 
 
+    @GetMapping("/productos/ventas")
+    public String ventas(Model modelo) {
+        modelo.addAttribute("productos",productoOperaciones.consultar());
+        return "venta_productos";
+    }
+    //Crear el post mapping en donde cuando se de click a vender restar las cantidades seleccionadas con el total
+    @PostMapping("/productos/vender")
+    public String vender(@ModelAttribute ("ventas") ProductosEntidades productos) {
+        int cantidadTotal = new ProductosEntidades().getCantidad() ;
+        int cantidadARestar= productos.getCantidad();
+
+        return "";
+    }
+
     @GetMapping("/productos/nuevo")
     public String guardarProducto(Model modelo){
         ProductosEntidades producto = new ProductosEntidades();
