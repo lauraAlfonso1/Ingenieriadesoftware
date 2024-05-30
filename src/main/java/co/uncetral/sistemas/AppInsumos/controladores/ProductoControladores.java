@@ -16,25 +16,16 @@ public class ProductoControladores {
     @Autowired
     ProductoOperaciones productoOperaciones;
 
-
-    @GetMapping("/productos/nuevo")
-    public String guardarProducto(Model modelo){
+    @GetMapping("/nuevoproduc")
+    public String guardarProducto(Model modelo) {
         ProductosEntidades producto = new ProductosEntidades();
-        modelo.addAttribute("productorellenar",producto);
+        modelo.addAttribute("productorellenar", producto);
         return "Nuevo_Producto";
     }
-    @PostMapping({"/accioncrear"})
-    public String accioncrear(@ModelAttribute("productorellenar") ProductosEntidades producto){
-        this.productoOperaciones.crear(producto);
-        return "redirect:/productos";
+
+    @PostMapping("/accioncrear")
+    public String accioncrear(@ModelAttribute("productorellenar") ProductosEntidades producto) {
+        productoOperaciones.crear(producto);
+        return "redirect:/nuevoproduc";
     }
-
-    @GetMapping({"/productos","/"})
-    public String listarProductos(Model modelo) {
-        modelo.addAttribute("productos", productoOperaciones.consultar());
-        return "lista_productos";
-    }
-
-
 }
-

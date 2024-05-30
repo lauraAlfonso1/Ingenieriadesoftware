@@ -10,9 +10,8 @@ public class AdminControlador {
         return "Nuevo_Proveedor";  // Redirige a la página de registro de proveedores
     }
 
-    @GetMapping("/registrar_clientes")
+    @GetMapping("/Nuevo_Cliente")
     public String registrarClientes() {
-        // Implementar la lógica para registrar clientes
-        return "registrar_clientes";
+        return "Nuevo_Cliente";
     }
 }

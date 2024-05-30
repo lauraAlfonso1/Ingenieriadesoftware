@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <style>
+        /* Estilo para el enlace */
+        .register-link {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block; /* Para que el enlace ocupe toda la anchura disponible */
+        }
+
+        /* Estilo para cambiar el color del enlace al pasar el mouse por encima */
+        .register-link:hover {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Bienvenido</h1>
+<p th:text="'Bienvenido, ' + ${vendedor.nombre}"></p>
+
+<!-- Enlace para registrar productos con estilo -->
+<a th:href="@{/nuevoproduc}" class="register-link">Registrar Productos</a>
+
+</body>
+</html>

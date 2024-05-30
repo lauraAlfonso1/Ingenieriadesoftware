@@ -1,6 +1,7 @@
 package co.uncetral.sistemas.AppInsumos.entidades;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.io.Serializable;
 

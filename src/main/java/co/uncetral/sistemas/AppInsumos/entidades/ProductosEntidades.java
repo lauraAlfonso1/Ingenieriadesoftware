@@ -27,6 +27,10 @@ public class ProductosEntidades implements Serializable {
     @Column(name = "PROD_CANTIDAD", nullable = false)
     private int cantidad;
 
+    @Column(name = "PROD_PRECIO", nullable = false)
+    private int precio;
+
+
 
 
 

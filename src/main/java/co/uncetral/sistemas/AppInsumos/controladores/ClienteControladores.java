@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ClienteControladores {
     @Autowired
     ClienteOperaciones clienteOperaciones;
-    @GetMapping("/cliente/nuevo")
+    @GetMapping("clientes/nuevo")
     public String guardarCliente(Model modelo){
         ClientesEntidades cliente = new ClientesEntidades();
         modelo.addAttribute("clienterellenar",cliente);
