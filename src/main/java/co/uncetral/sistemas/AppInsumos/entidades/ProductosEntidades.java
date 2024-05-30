@@ -15,11 +15,14 @@ public class ProductosEntidades implements Serializable {
     @Column(name = "PROD_CODIGO", nullable = false)
     private long codigo;
 
-    @Column(name = "PROD_MARCA", nullable = false)
+    @Column(name = "PROD_NOMBRE", nullable = false)
     private String nombre;
 
-    @Column(name = "PROD_MODELO", nullable = false)
-    private String modelo;
+    @Column(name = "PROD_MARCA", nullable = false)
+    private String marca;
+
+    @Column(name = "PROD_CATEGORIA", nullable = false)
+    private String categoria;
 
     @Column(name = "PRO_DESCRIPCION", nullable = false)
     private String descripcion;
