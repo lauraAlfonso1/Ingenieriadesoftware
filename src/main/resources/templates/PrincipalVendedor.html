@@ -3,18 +3,33 @@
 <head>
     <title>Dashboard</title>
     <style>
-        /* Estilo para el enlace */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        .link-container {
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
         .register-link {
             color: blue;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 10px;
-            display: block; /* Para que el enlace ocupe toda la anchura disponible */
+            margin: 10px 0;
+            display: block;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-
-        /* Estilo para cambiar el color del enlace al pasar el mouse por encima */
         .register-link:hover {
             color: darkblue;
+            border-color: darkblue;
         }
     </style>
 </head>
@@ -22,13 +37,13 @@
 <h1>Bienvenido</h1>
 <p th:text="'Bienvenido, ' + ${vendedor.nombre}"></p>
 
-<!-- Enlace para registrar productos con estilo -->
-<a th:href="@{/nuevoproduc}" class="register-link">Registrar Productos</a>
-<a th:href="@{/productos}" class="register-link">consultar disponibilidad Productos</a>
-<a th:href="@{/productosCodigo}" class="register-link">consultar Productos por Codigo</a>
-<a th:href="@{/proveedoresComunicacion}" class="register-link">Comunicación con proveedores</a>
-<a th:href="@{/productoCategoria}" class="register-link">Comunicación con proveedores</a>
+<div class="link-container">
+    <a th:href="@{/nuevoproduc}" class="register-link">Registrar Productos</a>
+    <a th:href="@{/productos}" class="register-link">Consultar Disponibilidad de Productos</a>
+    <a th:href="@{/productosCodigo}" class="register-link">Consultar Productos por Código</a>
+    <a th:href="@{/proveedoresComunicacion}" class="register-link">Comunicación con Proveedores</a>
+    <a th:href="@{/productoCategoria}" class="register-link">Consultar Productos por Categoría</a>
+</div>
 </body>
 </html>
-
 
