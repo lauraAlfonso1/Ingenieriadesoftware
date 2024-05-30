@@ -15,16 +15,11 @@ public class ProductoConsultaControlador {
     ProductoOperaciones productoOperaciones;
 
     @GetMapping("/productos")
-    public String listarProductos(@RequestParam(value = "nombre", required = false) String nombre,
-                                  @RequestParam(value = "categoria", required = false) String categoria,
-                                  Model modelo) {
+    public String listarProductosPorNombre(@RequestParam(value = "nombre", required = false) String nombre, Model modelo) {
         List<ProductosEntidades> productos;
 
         if (nombre != null && !nombre.isEmpty()) {
             productos = productoOperaciones.consultarPorNombre(nombre);
-        } else if (categoria != null && !categoria.isEmpty()) {
-            productos = productoOperaciones.consultarPorCategoria(categoria);
-
         } else {
             productos = productoOperaciones.consultar();
         }
@@ -33,4 +28,3 @@ public class ProductoConsultaControlador {
         return "lista_productos";
     }
 }
-
