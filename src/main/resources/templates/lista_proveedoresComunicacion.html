@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Lista de Proveedores comunicacion</title>
+    <title>Lista de Proveedores Comunicación</title>
     <style>
         table {
             width: 100%;
@@ -23,10 +23,16 @@
         .link:hover {
             color: darkblue;
         }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
-<h1>Lista de Proveedores comunicacion</h1>
+<h1>Lista de Proveedores Comunicación</h1>
 
 <table>
     <thead>
@@ -54,5 +60,10 @@
     </tr>
     </tbody>
 </table>
+
+<div class="button-container">
+    <button onclick="window.location.href='/proveedores/nuevo'">Agregar Nuevo Proveedor</button>
+</div>
+
 </body>
 </html>

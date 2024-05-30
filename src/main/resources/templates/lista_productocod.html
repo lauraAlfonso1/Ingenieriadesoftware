@@ -15,15 +15,28 @@
         th {
             background-color: #f2f2f2;
         }
+        .filter-form {
+            margin-bottom: 20px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
 <h1>Lista de Productos</h1>
 
-<form th:action="@{/productosCodigo}" method="get">
-    <label for="codigo">Código del Producto:</label>
-    <input type="number" id="codigo" name="codigo">
-    <button type="submit">Buscar</button>
+<form th:action="@{/productosCodigo}" method="get" class="filter-form">
+    <div>
+        <label for="codigo">Código del Producto:</label>
+        <input type="number" id="codigo" name="codigo">
+    </div>
+    <div>
+        <button type="submit">Buscar</button>
+    </div>
 </form>
 
 <table th:if="${productos != null}">
@@ -50,5 +63,10 @@
     </tr>
     </tbody>
 </table>
+
+<div class="button-container">
+    <button onclick="window.location.href='/productos/nuevo'">Agregar Nuevo Producto</button>
+</div>
+
 </body>
 </html>
