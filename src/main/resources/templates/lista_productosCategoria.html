@@ -29,10 +29,10 @@
 <body>
 <h1>Lista de Productos</h1>
 
-<form th:action="@{/productos}" method="get" class="filter-form">
+<form th:action="@{/productoCategoria}" method="get" class="filter-form">
     <div>
-        <label for="nombre">Nombre del Producto:</label>
-        <input type="text" id="nombre" name="nombre">
+        <label for="categoria">Categoría:</label>
+        <input type="text" id="categoria" name="categoria">
     </div>
     <div>
         <button type="submit">Filtrar</button>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        .link-container {
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        .register-link {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0;
+            display: block;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .register-link:hover {
+            color: darkblue;
+            border-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Bienvenido</h1>
+<p th:text="'Bienvenido, ' + ${vendedor.nombre}"></p>
+
+<div class="link-container">
+    <a th:href="@{/nuevoproduc}" class="register-link">Registrar Productos</a>
+    <a th:href="@{/productos}" class="register-link">Consultar Disponibilidad de Productos</a>
+    <a th:href="@{/productosCodigo}" class="register-link">Consultar Productos por Código</a>
+    <a th:href="@{/proveedoresComunicacion}" class="register-link">Comunicación con Proveedores</a>
+    <a th:href="@{/productoCategoria}" class="register-link">Consultar Productos por Categoría</a>
+</div>
+</body>
+</html>

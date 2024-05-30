@@ -29,32 +29,36 @@
 <body>
 <h1>Lista de Productos</h1>
 
-<form th:action="@{/productos}" method="get" class="filter-form">
+<form th:action="@{/productosCodigo}" method="get" class="filter-form">
     <div>
-        <label for="nombre">Nombre del Producto:</label>
-        <input type="text" id="nombre" name="nombre">
+        <label for="codigo">Código del Producto:</label>
+        <input type="number" id="codigo" name="codigo">
     </div>
     <div>
-        <button type="submit">Filtrar</button>
+        <button type="submit">Buscar</button>
     </div>
 </form>
 
-<table>
+<table th:if="${productos != null}">
     <thead>
     <tr>
+        <th>Código</th>
         <th>Nombre</th>
-        <th>Cantidad Disponible</th>
-        <th>Descripción</th>
+        <th>Marca</th>
         <th>Categoría</th>
+        <th>Descripción</th>
+        <th>Cantidad</th>
         <th>Precio</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="producto : ${productos}">
+        <td th:text="${producto.codigo}"></td>
         <td th:text="${producto.nombre}"></td>
-        <td th:text="${producto.cantidad}"></td>
-        <td th:text="${producto.descripcion}"></td>
+        <td th:text="${producto.marca}"></td>
         <td th:text="${producto.categoria}"></td>
+        <td th:text="${producto.descripcion}"></td>
+        <td th:text="${producto.cantidad}"></td>
         <td th:text="${producto.precio}"></td>
     </tr>
     </tbody>

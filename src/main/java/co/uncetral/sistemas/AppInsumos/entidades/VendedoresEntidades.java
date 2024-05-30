@@ -1,6 +1,7 @@
 package co.uncetral.sistemas.AppInsumos.entidades;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.io.Serializable;
 
@@ -12,15 +13,22 @@ import java.io.Serializable;
 @ToString
 public class VendedoresEntidades implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_VENDEDORES")
-    @SequenceGenerator(name = "SEQ_VENDEDORES_REL",sequenceName = "SEQ_VENDEDORES_REL", allocationSize = 1)
-    @Column(name = "Vend_ID", nullable = false)
-    private int id;
+    @Column(name = "VEND_CEDULA", nullable = false)
+    private int cedula;
 
-    @Column(name = "Vend_Nombre", nullable = false)
+    @Column(name = "VEND_NOMBRE", nullable = false)
     private String nombre;
 
-    @Column(name = "Vend_Contacto", nullable = false)
+    @Column(name = "VEND_CONTACTO", nullable = false)
     private int numero;
+
+    @Column(name = "VEND_CORREO", nullable = false, unique = true)
+    private String correo;
+
+    @Column(name = "VEND_CONTRA", nullable = false)
+    private String contrasena;
+
+
+
 
 }
