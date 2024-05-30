@@ -16,23 +16,10 @@ public class ProductoServicio implements ProductoOperaciones {
     public ProductosEntidades crear(ProductosEntidades producto) {
         return repositorioProductos.save(producto);
     }
+
+
     @Override
     public List<ProductosEntidades> consultar() {
         return repositorioProductos.findAll();
     }
-
-    @Override
-    public List<ProductosEntidades> consultarPorNombre(String nombre) {
-        return repositorioProductos.findByNombreContaining(nombre);
-    }
-
-    @Override
-    public List<ProductosEntidades> consultarPorCategoria(String categoria) {
-        return repositorioProductos.findByCategoriaContaining(categoria);
-    }
-    @Override
-    public List<ProductosEntidades> consultarPorIds(List<Long> ids) {
-        return repositorioProductos.findAllById(ids);
-    }
 }
-
