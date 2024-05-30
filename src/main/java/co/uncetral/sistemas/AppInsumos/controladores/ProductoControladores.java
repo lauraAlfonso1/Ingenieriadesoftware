@@ -11,15 +11,37 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class ProductoControladores {
     @Autowired
     ProductoOperaciones productoOperaciones;
 
 
+    @GetMapping("/productos/ventas")
+    public String ventas(Model modelo) {
+        modelo.addAttribute("productos",productoOperaciones.consultar());
+        return "venta_productos";
+    }
+    //Crear el post mapping en donde cuando se de click a vender restar las cantidades seleccionadas con el total
+    @PostMapping("/productos/actualizar-cantidades")
+    public String actualizarCantidades(@ModelAttribute ("ventas") List <ProductosEntidades> productos) {
+        
+        for (ProductosEntidades producto : productos) {
+            int nuevaCantidad = producto.getNuevaCantidad();
+            int cantidad = producto.getCantidad();
+            int cantidadActualizada = cantidad-nuevaCantidad;
+            producto.setCantidad(cantidadActualizada);
+
+        }
+        return "redirect:/lista_productos";
+    }
+
     @GetMapping("/productos/nuevo")
     public String guardarProducto(Model modelo){
         ProductosEntidades producto = new ProductosEntidades();
+        producto.setNuevaCantidad(0);
         modelo.addAttribute("productorellenar",producto);
         return "Nuevo_Producto";
     }

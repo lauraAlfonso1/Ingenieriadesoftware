@@ -7,4 +7,6 @@ import java.util.List;
 public interface ProductoOperaciones {
     public ProductosEntidades crear (ProductosEntidades producto);
     public List <ProductosEntidades> consultar();
+
+    void actualizarCantidad(long productoId, int nuevaCantidad);
 }

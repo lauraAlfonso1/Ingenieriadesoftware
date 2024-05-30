@@ -58,32 +58,24 @@
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
         <tr>
-            <th>Codigo</th>
+            <th>ID</th>
             <th>Nombre</th>
-            <th>Modelo</th>
-            <th>Descripcion</th>
-            <th>Cantidad</th>
-            <th>Precio Unitario</th>
+            <th>Correo</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="productos :${productos}">
-            <td th:text="${productos.codigo}">codigo</td>
-            <td th:text="${productos.nombre}">Nombre</td>
-            <td th:text="${productos.modelo}">modelo</td>
-            <td th:text="${productos.descripcion}">descripcion</td>
-            <td th:text="${productos.cantidad}">cantidad</td>
-            <td th:text="${productos.precio}">precio</td>
+        <tr th:each="clientes :${clientes}">
+            <td th:text="${clientes.id}">id</td>
+            <td th:text="${clientes.nombre}">Nombre</td>
+            <td th:text="${clientes.correo}">correo</td>
             <td>
 
             </td>
         </tr>
         </tbody>
-        <a th:href="@{/productos/nuevo}" class="btn btn-info">Añadir Producto</a>
+        <a th:href="@{/cliente/nuevo}" class="btn btn-info">Añadir Cliente</a>
 
     </table>
-    <a th:href="@{/productos/ventas}" class="btn btn-info">Venta de Productos</a>
-    <a th:href="@{/clientes}" class="btn btn-info">Lista de clientes</a>
 </div>
 </body>
 </html>

@@ -22,4 +22,9 @@ public class ProductoServicio implements ProductoOperaciones {
     public List<ProductosEntidades> consultar() {
         return repositorioProductos.findAll();
     }
+
+    @Override
+    public void actualizarCantidad(long productoId, int nuevaCantidad) {
+
+    }
 }
