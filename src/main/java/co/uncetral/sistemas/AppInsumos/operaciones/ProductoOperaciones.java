@@ -9,5 +9,6 @@ public interface ProductoOperaciones {
     public List<ProductosEntidades> consultar ();
     public List<ProductosEntidades> consultarPorNombre(String nombre);
     public List<ProductosEntidades> consultarPorCategoria(String categoria);
+    public List<ProductosEntidades> consultarPorIds(List<Long> ids);
 
 }

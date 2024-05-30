@@ -30,6 +30,9 @@ public class ProductoServicio implements ProductoOperaciones {
     public List<ProductosEntidades> consultarPorCategoria(String categoria) {
         return repositorioProductos.findByCategoriaContaining(categoria);
     }
-
+    @Override
+    public List<ProductosEntidades> consultarPorIds(List<Long> ids) {
+        return repositorioProductos.findAllById(ids);
+    }
 }
 

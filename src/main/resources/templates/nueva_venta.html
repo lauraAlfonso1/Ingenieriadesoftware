@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar Venta</title>
+</head>
+<body>
+<h1>Registrar Venta</h1>
+
+<form th:action="@{/ventas/registrar}" method="post">
+    <div th:each="producto : ${productos}">
+        <input type="checkbox" name="productoIds" th:value="${producto.codigo}"/> <span th:text="${producto.nombre}"></span>
+        <input type="number" name="cantidades" min="1" placeholder="Cantidad"/>
+    </div>
+    <button type="submit">Registrar Venta</button>
+</form>
+</body>
+</html>

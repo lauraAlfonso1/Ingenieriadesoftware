@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultado de la Venta</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+<h1>Resultado de la Venta</h1>
+
+<p>Total de la venta: <span th:text="${venta.total}"></span></p>
+<p>Descuento aplicado: <span th:text="${venta.descuento}"></span></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Subtotal</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="producto : ${venta.productos}">
+        <td th:text="${producto.codigo}"></td>
+        <td th:text="${producto.nombre}"></td>
+        <td th:text="${producto.cantidad}"></td>
+        <td th:text="${producto.precio}"></td>
+        <td th:text="${producto.cantidad * producto.precio}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="button-container">
+    <button onclick="printPage()">Imprimir</button>
+    <button onclick="window.location.href='/ventas/nueva'">Registrar Otra Venta</button>
+</div>
+
+</body>
+</html>
