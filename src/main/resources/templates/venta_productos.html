@@ -64,6 +64,7 @@
             <th>Modelo</th>
             <th>Descripcion</th>
             <th>Cantidad</th>
+            <th>Cantidad a retirar</th>
             <th>Precio Unitario</th>
         </tr>
         </thead>
@@ -73,9 +74,10 @@
             <td th:text="${producto.nombre}">Nombre</td>
             <td th:text="${producto.modelo}">modelo</td>
             <td th:text="${producto.descripcion}">descripcion</td>
+            <td th:text="${producto.cantidad}">cantidad</td>
             <td>
                 <div class="form-group">
-                    <input type="int" name="cantidad" th:field="*{producto.cantidad}" class="form-control" placeholder="Digite la cantidades que requiera: " required>
+                    <input type="int" name="nuevaCantidad" th:field="*{producto.nuevaCantidad}" class="form-control" placeholder="Digite la cantidades que requiera: " required>
                 </div>
             </td>
             <td th:text="${producto.precio}">precio</td>

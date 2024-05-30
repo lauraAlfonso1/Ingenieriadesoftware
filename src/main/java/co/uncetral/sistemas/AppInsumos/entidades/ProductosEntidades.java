@@ -30,9 +30,7 @@ public class ProductosEntidades implements Serializable {
     @Column(name = "PROD_PRECIO",nullable = false)
     private int precio;
 
-
-
-
-
+    @Column(name = "PROD_NUEVACANTIDAD",nullable = false)
+    private int nuevaCantidad;
 
 }
