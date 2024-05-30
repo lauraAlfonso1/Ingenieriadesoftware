@@ -27,7 +27,7 @@ public class ProductoControladores {
     //Crear el post mapping en donde cuando se de click a vender restar las cantidades seleccionadas con el total
     @PostMapping("/productos/actualizar-cantidades")
     public String actualizarCantidades(@ModelAttribute ("ventas") List <ProductosEntidades> productos) {
-        // Iterate through submitted product quantities
+        
         for (ProductosEntidades producto : productos) {
             int nuevaCantidad = producto.getNuevaCantidad();
             int cantidad = producto.getCantidad();
@@ -59,3 +59,4 @@ public class ProductoControladores {
 
 
 }
+
