@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Productos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Lista de Productos</h1>
+
+<form th:action="@{/productosCodigo}" method="get">
+    <label for="codigo">Código del Producto:</label>
+    <input type="number" id="codigo" name="codigo">
+    <button type="submit">Buscar</button>
+</form>
+
+<table th:if="${productos != null}">
+    <thead>
+    <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Categoría</th>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="producto : ${productos}">
+        <td th:text="${producto.codigo}"></td>
+        <td th:text="${producto.nombre}"></td>
+        <td th:text="${producto.marca}"></td>
+        <td th:text="${producto.categoria}"></td>
+        <td th:text="${producto.descripcion}"></td>
+        <td th:text="${producto.cantidad}"></td>
+        <td th:text="${producto.precio}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

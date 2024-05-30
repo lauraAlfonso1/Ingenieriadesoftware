@@ -22,6 +22,8 @@ public class ProovedoresEntidades {
 
     @Column(name = "Prov_CONTACTO", nullable = false)
     private int contacto;
+    @Column(name = "Prov_CORREO", nullable = false)
+    private  String correo;
 
     @Column(name = "Prov_DIRECCION", nullable = false)
     private String direccion;
