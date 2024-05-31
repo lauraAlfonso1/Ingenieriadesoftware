@@ -19,7 +19,7 @@ public class VendedorControlador {
 
         VendedoresEntidades vendedor = new VendedoresEntidades();
         modelo.addAttribute("vendedorllenar",vendedor);
-        return "Nuevo_vendedor";
+        return "Nuevo_Vendedor";
 
     }
     @PostMapping ({"accioncrearven"})
