@@ -18,7 +18,7 @@ public class ProveedorControlador {
 
         ProovedoresEntidades proveedor = new ProovedoresEntidades();
         modelo.addAttribute("proveedorllenar",proveedor);
-        return "Nuevo_proveedor";
+        return "Nuevo_Proveedor";
 
     }
     @PostMapping ({"accioncrearpro"})
